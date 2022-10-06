@@ -1,0 +1,17 @@
+C:\Users\jmbarroso\Desktop\Proyecto SportRadar\scoreBoard.api\scoreBoard.api.test\bin\Debug\netcoreapp2.2\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\jmbarroso\Desktop\Proyecto SportRadar\scoreBoard.api\scoreBoard.api.test\bin\Debug\netcoreapp2.2\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\jmbarroso\Desktop\Proyecto SportRadar\scoreBoard.api\scoreBoard.api.test\bin\Debug\netcoreapp2.2\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\jmbarroso\Desktop\Proyecto SportRadar\scoreBoard.api\scoreBoard.api.test\bin\Debug\netcoreapp2.2\scoreBoard.api.test.deps.json
+C:\Users\jmbarroso\Desktop\Proyecto SportRadar\scoreBoard.api\scoreBoard.api.test\bin\Debug\netcoreapp2.2\scoreBoard.api.test.runtimeconfig.json
+C:\Users\jmbarroso\Desktop\Proyecto SportRadar\scoreBoard.api\scoreBoard.api.test\bin\Debug\netcoreapp2.2\scoreBoard.api.test.runtimeconfig.dev.json
+C:\Users\jmbarroso\Desktop\Proyecto SportRadar\scoreBoard.api\scoreBoard.api.test\bin\Debug\netcoreapp2.2\scoreBoard.api.test.dll
+C:\Users\jmbarroso\Desktop\Proyecto SportRadar\scoreBoard.api\scoreBoard.api.test\bin\Debug\netcoreapp2.2\scoreBoard.api.test.pdb
+C:\Users\jmbarroso\Desktop\Proyecto SportRadar\scoreBoard.api\scoreBoard.api.test\obj\Debug\netcoreapp2.2\scoreBoard.api.test.csprojAssemblyReference.cache
+C:\Users\jmbarroso\Desktop\Proyecto SportRadar\scoreBoard.api\scoreBoard.api.test\obj\Debug\netcoreapp2.2\scoreBoard.api.test.csproj.CoreCompileInputs.cache
+C:\Users\jmbarroso\Desktop\Proyecto SportRadar\scoreBoard.api\scoreBoard.api.test\obj\Debug\netcoreapp2.2\scoreBoard.api.test.AssemblyInfoInputs.cache
+C:\Users\jmbarroso\Desktop\Proyecto SportRadar\scoreBoard.api\scoreBoard.api.test\obj\Debug\netcoreapp2.2\scoreBoard.api.test.AssemblyInfo.cs
+C:\Users\jmbarroso\Desktop\Proyecto SportRadar\scoreBoard.api\scoreBoard.api.test\obj\Debug\netcoreapp2.2\scoreBoard.api.test.dll
+C:\Users\jmbarroso\Desktop\Proyecto SportRadar\scoreBoard.api\scoreBoard.api.test\obj\Debug\netcoreapp2.2\scoreBoard.api.test.pdb
+C:\Users\jmbarroso\Desktop\Proyecto SportRadar\scoreBoard.api\scoreBoard.api.test\bin\Debug\netcoreapp2.2\scoreBoard.api.dll
+C:\Users\jmbarroso\Desktop\Proyecto SportRadar\scoreBoard.api\scoreBoard.api.test\bin\Debug\netcoreapp2.2\scoreBoard.api.pdb
+C:\Users\jmbarroso\Desktop\Proyecto SportRadar\scoreBoard.api\scoreBoard.api.test\obj\Debug\netcoreapp2.2\scoreBoard.api.test.csproj.CopyComplete

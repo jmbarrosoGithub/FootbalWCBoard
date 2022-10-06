@@ -1,0 +1,56 @@
+# Java
+*.class
+*.jar
+*.war
+*.ear
+
+# Eclipse
+.project
+.classpath
+.settings
+
+# m2e-code-quality Eclipse IDE plugin temporary configuration files for Eclipse CS Checkstyle
+.checkstyle
+
+# Idea
+.idea
+*.iml
+*.iws
+*.ipr
+
+# Netbeans
+nb-configuration.xml
+*.factorypath
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Gradle
+.gradle
+!gradle-wrapper.jar
+
+# Maven
+target
+
+# Build
+out
+build
+bin
+
+# Other
+*.log
+*.swp
+*.bak
+
+#Node
+node_modules
+
+# Vscode
+.vscode
+*.factorypath
+/MCNA-parent/MCNA-infrastructure/nbproject/
+/MCNA-parent/MCNA-kernel/nbproject/
+/MCNA-parent/MCNA-core/nbproject/
+/MCNA-parent/MCNA-webapp/nbproject/
+/MCNA-parent/MCNA-webapp-tests/nbproject/
