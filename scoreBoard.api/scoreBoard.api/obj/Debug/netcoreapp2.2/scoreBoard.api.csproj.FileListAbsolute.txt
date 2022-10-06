@@ -12,3 +12,17 @@ C:\Users\jmbarroso\Desktop\Proyecto SportRadar\scoreBoard.api\scoreBoard.api\obj
 C:\Users\jmbarroso\Desktop\Proyecto SportRadar\scoreBoard.api\scoreBoard.api\obj\Debug\netcoreapp2.2\scoreBoard.api.RazorTargetAssemblyInfo.cache
 C:\Users\jmbarroso\Desktop\Proyecto SportRadar\scoreBoard.api\scoreBoard.api\obj\Debug\netcoreapp2.2\scoreBoard.api.dll
 C:\Users\jmbarroso\Desktop\Proyecto SportRadar\scoreBoard.api\scoreBoard.api\obj\Debug\netcoreapp2.2\scoreBoard.api.pdb
+C:\Users\jmbarroso\Desktop\Proyectos GitHub\FootbalWCBoard\scoreBoard.api\scoreBoard.api\bin\Debug\netcoreapp2.2\scoreBoard.api.deps.json
+C:\Users\jmbarroso\Desktop\Proyectos GitHub\FootbalWCBoard\scoreBoard.api\scoreBoard.api\bin\Debug\netcoreapp2.2\scoreBoard.api.runtimeconfig.json
+C:\Users\jmbarroso\Desktop\Proyectos GitHub\FootbalWCBoard\scoreBoard.api\scoreBoard.api\bin\Debug\netcoreapp2.2\scoreBoard.api.runtimeconfig.dev.json
+C:\Users\jmbarroso\Desktop\Proyectos GitHub\FootbalWCBoard\scoreBoard.api\scoreBoard.api\bin\Debug\netcoreapp2.2\scoreBoard.api.dll
+C:\Users\jmbarroso\Desktop\Proyectos GitHub\FootbalWCBoard\scoreBoard.api\scoreBoard.api\bin\Debug\netcoreapp2.2\scoreBoard.api.pdb
+C:\Users\jmbarroso\Desktop\Proyectos GitHub\FootbalWCBoard\scoreBoard.api\scoreBoard.api\obj\Debug\netcoreapp2.2\scoreBoard.api.csprojAssemblyReference.cache
+C:\Users\jmbarroso\Desktop\Proyectos GitHub\FootbalWCBoard\scoreBoard.api\scoreBoard.api\obj\Debug\netcoreapp2.2\scoreBoard.api.csproj.CoreCompileInputs.cache
+C:\Users\jmbarroso\Desktop\Proyectos GitHub\FootbalWCBoard\scoreBoard.api\scoreBoard.api\obj\Debug\netcoreapp2.2\scoreBoard.api.RazorAssemblyInfo.cache
+C:\Users\jmbarroso\Desktop\Proyectos GitHub\FootbalWCBoard\scoreBoard.api\scoreBoard.api\obj\Debug\netcoreapp2.2\scoreBoard.api.RazorAssemblyInfo.cs
+C:\Users\jmbarroso\Desktop\Proyectos GitHub\FootbalWCBoard\scoreBoard.api\scoreBoard.api\obj\Debug\netcoreapp2.2\scoreBoard.api.AssemblyInfoInputs.cache
+C:\Users\jmbarroso\Desktop\Proyectos GitHub\FootbalWCBoard\scoreBoard.api\scoreBoard.api\obj\Debug\netcoreapp2.2\scoreBoard.api.AssemblyInfo.cs
+C:\Users\jmbarroso\Desktop\Proyectos GitHub\FootbalWCBoard\scoreBoard.api\scoreBoard.api\obj\Debug\netcoreapp2.2\scoreBoard.api.RazorTargetAssemblyInfo.cache
+C:\Users\jmbarroso\Desktop\Proyectos GitHub\FootbalWCBoard\scoreBoard.api\scoreBoard.api\obj\Debug\netcoreapp2.2\scoreBoard.api.dll
+C:\Users\jmbarroso\Desktop\Proyectos GitHub\FootbalWCBoard\scoreBoard.api\scoreBoard.api\obj\Debug\netcoreapp2.2\scoreBoard.api.pdb
