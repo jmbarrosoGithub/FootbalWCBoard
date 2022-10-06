@@ -7469,11 +7469,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jmbarroso\\Desktop\\Proyecto SportRadar\\scoreBoard.api\\scoreBoard.api.test\\scoreBoard.api.test.csproj",
+      "projectUniqueName": "C:\\Users\\jmbarroso\\Desktop\\Proyectos GitHub\\FootbalWCBoard\\scoreBoard.api\\scoreBoard.api.test\\scoreBoard.api.test.csproj",
       "projectName": "scoreBoard.api.test",
-      "projectPath": "C:\\Users\\jmbarroso\\Desktop\\Proyecto SportRadar\\scoreBoard.api\\scoreBoard.api.test\\scoreBoard.api.test.csproj",
+      "projectPath": "C:\\Users\\jmbarroso\\Desktop\\Proyectos GitHub\\FootbalWCBoard\\scoreBoard.api\\scoreBoard.api.test\\scoreBoard.api.test.csproj",
       "packagesPath": "C:\\Users\\jmbarroso\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jmbarroso\\Desktop\\Proyecto SportRadar\\scoreBoard.api\\scoreBoard.api.test\\obj\\",
+      "outputPath": "C:\\Users\\jmbarroso\\Desktop\\Proyectos GitHub\\FootbalWCBoard\\scoreBoard.api\\scoreBoard.api.test\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -7492,8 +7492,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\Users\\jmbarroso\\Desktop\\Proyecto SportRadar\\scoreBoard.api\\scoreBoard.api\\scoreBoard.api.csproj": {
-              "projectPath": "C:\\Users\\jmbarroso\\Desktop\\Proyecto SportRadar\\scoreBoard.api\\scoreBoard.api\\scoreBoard.api.csproj"
+            "C:\\Users\\jmbarroso\\Desktop\\Proyectos GitHub\\FootbalWCBoard\\scoreBoard.api\\scoreBoard.api\\scoreBoard.api.csproj": {
+              "projectPath": "C:\\Users\\jmbarroso\\Desktop\\Proyectos GitHub\\FootbalWCBoard\\scoreBoard.api\\scoreBoard.api\\scoreBoard.api.csproj"
             }
           }
         }

@@ -12091,11 +12091,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jmbarroso\\Desktop\\Proyecto SportRadar\\scoreBoard.api\\scoreBoard.api\\scoreBoard.api.csproj",
+      "projectUniqueName": "C:\\Users\\jmbarroso\\Desktop\\Proyectos GitHub\\FootbalWCBoard\\scoreBoard.api\\scoreBoard.api\\scoreBoard.api.csproj",
       "projectName": "scoreBoard.api",
-      "projectPath": "C:\\Users\\jmbarroso\\Desktop\\Proyecto SportRadar\\scoreBoard.api\\scoreBoard.api\\scoreBoard.api.csproj",
+      "projectPath": "C:\\Users\\jmbarroso\\Desktop\\Proyectos GitHub\\FootbalWCBoard\\scoreBoard.api\\scoreBoard.api\\scoreBoard.api.csproj",
       "packagesPath": "C:\\Users\\jmbarroso\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jmbarroso\\Desktop\\Proyecto SportRadar\\scoreBoard.api\\scoreBoard.api\\obj\\",
+      "outputPath": "C:\\Users\\jmbarroso\\Desktop\\Proyectos GitHub\\FootbalWCBoard\\scoreBoard.api\\scoreBoard.api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
