@@ -16,5 +16,13 @@ namespace scoreBoard.api.test.Tools
 
             return modelResp;
         }
+        public static List<PartidoDTO> ActionResultToListPartidoDTO(Task<IActionResult> objResp)
+        {   
+            var okResult = objResp.Result as OkObjectResult;
+            var lst = okResult.Value as List<PartidoDTO>;
+
+            return lst;
+        }
+
     }
 }

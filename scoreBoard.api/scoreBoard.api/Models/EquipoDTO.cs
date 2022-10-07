@@ -22,5 +22,16 @@ namespace scoreBoard.api.Models
 
             return sresp;
         }
+
+        public EquipoDTO(string nombre, int goles = 0,string id = null)
+        {
+            this.Nombre = nombre;
+            this.Goles = goles;
+            if (!String.IsNullOrEmpty(id))
+            {
+                this.Id = id;
+            }
+
+        }
     }
 }
