@@ -21,37 +21,39 @@ namespace scoreBoard.api.test
         {
             controllerTester = new ScoreBoardController();
         }
+        #region POST Test
 
         [TestMethod]
-        public void Put_BadRequest_ModelStateIsValid()
+        public async Task Post_BadRequest_ModelStateIsValid()
         {
             //Arrange
             controllerTester.ModelState.AddModelError("error", "mal formado");
 
             //Act
-            var objResp = controllerTester.Put(null);
+            var objResp = controllerTester.Create(null);
 
             //Assert            
             Assert.IsInstanceOfType(objResp.Result, typeof(BadRequestObjectResult));
         }
 
-        //Put_BadRequest_ValidacionException
-
         [TestMethod]
-        public async Task Put_ReturnNewPartidoAsync()
+        public async Task Post_ReturnNewPartidoAsync()
         {
             //Arrange            
             var modelDummy = DummyPartidoDTO.crear();
                         
             //Act
-            var objResp = controllerTester.Put(modelDummy);
-            
+            var objResp = controllerTester.Create(modelDummy);
+            var partidoPut = ToolsTest.ActionResultToPartidoDTO(objResp);
+
             //Assert
-            Assert.IsInstanceOfType(objResp.Result, typeof(OkObjectResult));
-            var okResult = objResp.Result as OkObjectResult;
-            var actualConfiguration = okResult.Value as PartidoDTO;
-            Assert.AreSame(modelDummy.EquipoLocal.Id, ((objResp.Result as OkObjectResult).Value as PartidoDTO).EquipoLocal.Id);
+            Assert.IsInstanceOfType(objResp.Result, typeof(OkObjectResult));           
+            Assert.AreSame(modelDummy.EquipoLocal.Id, partidoPut.EquipoLocal.Id);
         }
+
+        #endregion
+
+        #region DELETE Test
 
         [TestMethod]
         public async Task Delete_NotFoundIdNullOrEmpty()
@@ -69,9 +71,9 @@ namespace scoreBoard.api.test
         public async Task Delete_NotFoundPartidoNonExist()
         {
             //Arrange
-            
+            string idPartido = Guid.NewGuid().ToString();
             //Act
-            var objResp = controllerTester.Delete(Guid.NewGuid().ToString());
+            var objResp = controllerTester.Delete(idPartido);
 
             //Assert
             Assert.IsInstanceOfType(objResp.Result, typeof(NotFoundObjectResult));
@@ -81,7 +83,7 @@ namespace scoreBoard.api.test
         public async Task Delete_ReturnOK()
         {
             //Arrange            
-            var objResp = this.controllerTester.Put(DummyPartidoDTO.crear());
+            var objResp = this.controllerTester.Create(DummyPartidoDTO.crear());
             var partidoPut = ToolsTest.ActionResultToPartidoDTO(objResp);
 
             //Act
@@ -91,8 +93,57 @@ namespace scoreBoard.api.test
             //Assert
             Assert.IsInstanceOfType(objResp.Result, typeof(OkObjectResult));
             Assert.AreSame(partidoPut.EquipoLocal.Id, partidoDel.EquipoLocal.Id);
-
         }
+
+        #endregion
+
+        #region UPDATE Test
+        [TestMethod]
+        public async Task Put_BadRequest_ModelStateIsValid()
+        {
+            //Arrange
+            controllerTester.ModelState.AddModelError("error", "mal formado");
+
+            //Act
+            var objResp = controllerTester.Update(null);
+
+            //Assert            
+            Assert.IsInstanceOfType(objResp.Result, typeof(BadRequestObjectResult));
+        }
+
+        [TestMethod]
+        public async Task Put_NotFoundPartidoNonExist()
+        {
+            //Arrange
+            var partido = DummyPartidoDTO.crear();
+
+            //Act
+            var objResp = controllerTester.Update(partido);
+
+            //Assert
+            Assert.IsInstanceOfType(objResp.Result, typeof(NotFoundObjectResult));
+        }
+
+        [TestMethod]
+        public async Task Put_ReturnOKUpdate()
+        {
+            //Arrange            
+            var objResp = this.controllerTester.Create(DummyPartidoDTO.crear());
+            var partidoPut = ToolsTest.ActionResultToPartidoDTO(objResp);
+
+            partidoPut.EquipoLocal.Goles = +1;
+
+
+            //Act
+            var respUpd = controllerTester.Update(partidoPut);
+            var partidoUpd = ToolsTest.ActionResultToPartidoDTO(respUpd);
+
+            //Assert
+            Assert.IsInstanceOfType(objResp.Result, typeof(OkObjectResult));
+            Assert.AreEqual(partidoPut.EquipoLocal.Goles, partidoUpd.EquipoLocal.Goles);
+        }
+
+        #endregion
     }
     
 }

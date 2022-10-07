@@ -1,11 +1,10 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using scoreBoard.api.Models;
+using scoreBoard.api.SesionRepository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
-using scoreBoard.api.Models;
-using scoreBoard.api.SesionRepository;
 
 namespace scoreBoard.api.Controllers
 {
@@ -21,11 +20,10 @@ namespace scoreBoard.api.Controllers
         /// b.Away team
         /// </summary>
         /// <returns></returns>
-        [HttpPut]
+        [HttpPost]
         [Route("StartGame")]
-        public async Task<IActionResult> Put(PartidoDTO partidoDTO)
-        {
-                        
+        public async Task<IActionResult> Create(PartidoDTO partidoDTO)
+        {                        
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
@@ -35,6 +33,7 @@ namespace scoreBoard.api.Controllers
             
             partidoDTO.Id = Guid.NewGuid().ToString();
             partidoDTO.FechaEncuentro = DateTime.Now;
+            partidoDTO.FechaUltimaActualizacion = partidoDTO.FechaEncuentro;
             SessionRepository.ScoreBoardRepository.Add(partidoDTO);
 
             return Ok(partidoDTO);
@@ -67,8 +66,36 @@ namespace scoreBoard.api.Controllers
         }
 
 
-        //UpdateScore
-        //GetSummary of games by total score
+        /// <summary>
+        /// Update score. Receiving the pair score; home team score and away team score updates a game score.
+        /// </summary>
+        /// <param name="partidoDTO"></param>
+        /// <returns></returns>
+        [HttpPut]
+        [Route("UpdateScore")]
+        public async Task<IActionResult> Update(PartidoDTO partido)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            PartidoDTO partidoLocalizado = SessionRepository.ScoreBoardRepository.Where(x => x.Id.Equals(partido.Id)).FirstOrDefault();
+
+            if (partidoLocalizado == null)
+            {
+                return NotFound(partidoLocalizado);
+            }
+
+
+            //Validaciones negocio(partido no exista)
+            SessionRepository.ScoreBoardRepository.Where(x => x.Id.Equals(partido.Id)).FirstOrDefault().EquipoLocal.Goles = partido.EquipoLocal.Goles;
+            SessionRepository.ScoreBoardRepository.Where(x => x.Id.Equals(partido.Id)).FirstOrDefault().EquipoVisitante.Goles = partido.EquipoVisitante.Goles;
+            SessionRepository.ScoreBoardRepository.Where(x => x.Id.Equals(partido.Id)).FirstOrDefault().FechaUltimaActualizacion = DateTime.Now;
+            
+            return Ok(partido);
+        }
+
 
         /// <summary>
         /// Get a summary of games by total score. Those games with the same total score will be returned ordered by the most recently added to our system
@@ -79,35 +106,6 @@ namespace scoreBoard.api.Controllers
         public async Task<IActionResult> GetSumary()
         {
             return Ok(SessionRepository.ScoreBoardRepository);
-        }
-        
-               
-        // GET api/values
-        [HttpGet]
-        public ActionResult<IEnumerable<PartidoDTO>> Get()
-        {
-            return SessionRepository.ScoreBoardRepository;
-        }
-
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/values
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
-
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        
+        }      
     }
 }
