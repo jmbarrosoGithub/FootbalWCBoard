@@ -12,13 +12,13 @@ namespace scoreBoard.api.Models
 
         [Required]
         public EquipoDTO EquipoLocal { get; set; }
-        public int GolesLocal { get; set; }
-
+        
         [Required]
         public EquipoDTO EquipoVisitante { get; set; }
-        public int GolesVisitante { get; set; }
-
+ 
         public DateTime FechaEncuentro { get; set; }
+        
+        public DateTime FechaUltimaActualizacion { get; set; }
 
     }
 }
