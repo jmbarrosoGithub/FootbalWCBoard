@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace scoreBoard.api.Models
 {
@@ -15,6 +12,19 @@ namespace scoreBoard.api.Models
         
         [Required]
         public EquipoDTO EquipoVisitante { get; set; }
+
+        public int TotalGolesPartido
+        {            
+            get
+            {
+                int _totalGoles = 0;
+                if(this.EquipoLocal != null && this.EquipoVisitante != null)
+                {
+                    _totalGoles= this.EquipoVisitante.Goles + this.EquipoLocal.Goles; ;
+                }
+                return _totalGoles;
+            }
+        }
  
         public DateTime FechaEncuentro { get; set; }
         

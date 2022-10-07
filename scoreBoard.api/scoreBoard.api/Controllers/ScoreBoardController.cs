@@ -11,8 +11,7 @@ namespace scoreBoard.api.Controllers
     [Route("api/[controller]")]
     [ApiController]
     public class ScoreBoardController : Controller
-    {
-        //ILogger
+    {   
 
         /// <summary>
         /// Start a game. Our data partners will send us data for the games when they start, and these should capture (Initial score is 0 – 0).
@@ -32,7 +31,7 @@ namespace scoreBoard.api.Controllers
             //Validaciones negocio(partido no exista)
             
             partidoDTO.Id = Guid.NewGuid().ToString();
-            partidoDTO.FechaEncuentro = DateTime.Now;
+            partidoDTO.FechaEncuentro = partidoDTO.FechaEncuentro == null ? DateTime.Now : partidoDTO.FechaEncuentro;
             partidoDTO.FechaUltimaActualizacion = partidoDTO.FechaEncuentro;
             SessionRepository.ScoreBoardRepository.Add(partidoDTO);
 
@@ -105,7 +104,15 @@ namespace scoreBoard.api.Controllers
         [Route("Summary")]
         public async Task<IActionResult> GetSumary()
         {
-            return Ok(SessionRepository.ScoreBoardRepository);
+            if(SessionRepository.ScoreBoardRepository == null || SessionRepository.ScoreBoardRepository.Count  == 0)
+            {
+                return NoContent();
+
+            }
+
+            return Ok(SessionRepository.ScoreBoardRepository
+                .OrderByDescending(x => x.TotalGolesPartido)
+                .ThenByDescending(p => p.FechaEncuentro).ToList<PartidoDTO>());                
         }      
     }
 }

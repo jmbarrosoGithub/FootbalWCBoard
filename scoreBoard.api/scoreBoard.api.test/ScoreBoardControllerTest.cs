@@ -7,7 +7,9 @@ using scoreBoard.api.SesionRepository;
 using scoreBoard.api.test.DummysFactory.DummyModels;
 using scoreBoard.api.test.Tools;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace scoreBoard.api.test
 {
@@ -19,6 +21,7 @@ namespace scoreBoard.api.test
         [TestInitialize]
         public void Init()
         {
+            SessionRepository.ScoreBoardRepository.RemoveAll(x => x.Id != null);
             controllerTester = new ScoreBoardController();
         }
         #region POST Test
@@ -40,7 +43,7 @@ namespace scoreBoard.api.test
         public async Task Post_ReturnNewPartidoAsync()
         {
             //Arrange            
-            var modelDummy = DummyPartidoDTO.crear();
+            var modelDummy = DummyPartidoDTO.Crear();
                         
             //Act
             var objResp = controllerTester.Create(modelDummy);
@@ -83,7 +86,7 @@ namespace scoreBoard.api.test
         public async Task Delete_ReturnOK()
         {
             //Arrange            
-            var objResp = this.controllerTester.Create(DummyPartidoDTO.crear());
+            var objResp = this.controllerTester.Create(DummyPartidoDTO.Crear());
             var partidoPut = ToolsTest.ActionResultToPartidoDTO(objResp);
 
             //Act
@@ -115,7 +118,7 @@ namespace scoreBoard.api.test
         public async Task Put_NotFoundPartidoNonExist()
         {
             //Arrange
-            var partido = DummyPartidoDTO.crear();
+            var partido = DummyPartidoDTO.Crear();
 
             //Act
             var objResp = controllerTester.Update(partido);
@@ -128,7 +131,7 @@ namespace scoreBoard.api.test
         public async Task Put_ReturnOKUpdate()
         {
             //Arrange            
-            var objResp = this.controllerTester.Create(DummyPartidoDTO.crear());
+            var objResp = this.controllerTester.Create(DummyPartidoDTO.Crear());
             var partidoPut = ToolsTest.ActionResultToPartidoDTO(objResp);
 
             partidoPut.EquipoLocal.Goles = +1;
@@ -141,6 +144,45 @@ namespace scoreBoard.api.test
             //Assert
             Assert.IsInstanceOfType(objResp.Result, typeof(OkObjectResult));
             Assert.AreEqual(partidoPut.EquipoLocal.Goles, partidoUpd.EquipoLocal.Goles);
+        }
+
+        #endregion
+
+        #region GET Test
+        [TestMethod]
+        public async Task Get_NoContentSummary()
+        {
+            controllerTester = new ScoreBoardController();
+
+            //Act
+            var objResp = controllerTester.GetSumary();
+
+            //Assert            
+            Assert.IsInstanceOfType(objResp.Result, typeof(NoContentResult));
+        }
+
+        [TestMethod]
+        public async Task Get_ReturnOkSummary()
+        {
+            //Arrange
+            List<PartidoDTO> listaPartidosDummy = new List<PartidoDTO>();
+            foreach (var partido in DummyPartidoDTO.CrearLista())
+            {
+                var objResp = this.controllerTester.Create(partido);
+                var partidoPut = ToolsTest.ActionResultToPartidoDTO(objResp);
+                listaPartidosDummy.Add(partidoPut);
+            }
+
+            //Act
+            var resp = controllerTester.GetSumary();
+            
+            //Assert
+            Assert.IsInstanceOfType(resp.Result, typeof(OkObjectResult));
+            var primarPartido = listaPartidosDummy.OrderByDescending(d => d.TotalGolesPartido).ThenByDescending(d => d.FechaEncuentro).First();
+
+            List<PartidoDTO> lst = ToolsTest.ActionResultToListPartidoDTO(resp);
+
+            Assert.AreEqual(primarPartido, lst.First());
         }
 
         #endregion
